@@ -1,0 +1,191 @@
+:root {
+  --hsl-white: hsl(0, 0%, 100%);
+  --stone-100: hsl(30, 54%, 90%);
+  --stone-150: hsl(30, 18%, 87%);
+  --stone-600: hsl(30, 10%, 34%);
+  --stone-900: hsl(24, 5%, 18%);
+  --brown-800: hsl(14, 45%, 36%);
+  --rose-800: hsl(332, 51%, 32%);
+  --rose-50: hsl(330, 100%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--stone-100);
+}
+
+.recipe-card {
+  background-color: var(--hsl-white);
+}
+
+h1,
+h2 {
+  font-family: "Young Serif", sans-serif;
+}
+
+p,
+td,
+li {
+  font-family: "Outfit", sans-serif;
+  color: var(--stone-600);
+}
+
+ul {
+  list-style: none;
+}
+
+ul li::before {
+  content: "\2022";
+}
+
+h1 {
+  color: var(--stone-900);
+}
+
+h2 {
+  color: var(--brown-800);
+}
+
+.recipe-description {
+  color: var(--stone-600);
+}
+
+.preparation-card {
+  background-color: var(--rose-50);
+  padding: 1em;
+  border-radius: 1rem;
+}
+
+.preparation-section {
+  color: var(--rose-800);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.preparation-list li::before {
+  color: var(--rose-800);
+}
+
+li > bold {
+  font-weight: 800;
+}
+
+.ingredients-list li::before {
+  color: var(--brown-800);
+}
+
+ol {
+  counter-reset: item;
+  list-style: none;
+}
+
+ol li::before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  color: var(--brown-800);
+}
+
+.macro-numbers {
+  font-weight: 800;
+  color: var(--brown-800);
+}
+
+.recipe-card-positioning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media all and (min-width: 375px) {
+  .recipe-card {
+    min-height: 100dvh;
+  }
+
+  .recipe-alignment {
+    padding: 1.5em;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  h1 {
+    line-height: 2rem;
+  }
+
+  .recipe-description {
+    margin: 1.5rem 0;
+    line-height: 1.5rem;
+  }
+
+  .preparation-card {
+    margin-right: auto;
+  }
+
+  .preparation-section > p {
+    margin: 2rem;
+  }
+
+  .preparation-card ul {
+    margin-top: 1rem;
+  }
+
+  .preparation-card ul li::before {
+    margin-right: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .preparation-card li {
+    margin-top: 0.7rem;
+    text-wrap-mode: wrap;
+  }
+
+  .ingredients-section {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ingredients-list li::before {
+    margin-right: 1.5rem;
+    margin-left: 0.5rem;
+  }
+
+  .ingredients-list li {
+    margin-top: 1rem;
+  }
+
+  hr {
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    background-color: var(--stone-150);
+    border: none;
+    height: 1px;
+  }
+
+  .instructions-section {
+    margin-bottom: 1rem;
+  }
+
+  .instructions-list li {
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  .instructions-list li::before {
+    margin-left: 0.5rem; /* Position the marker */
+    margin-right: 1rem; /* Space after the marker */
+  }
+}
+@media all and (min-width: 1440px) {
+  .recipe-card {
+    border-radius: 1.6rem;
+  }
+}

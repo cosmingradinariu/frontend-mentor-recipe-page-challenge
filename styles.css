@@ -75,6 +75,10 @@ li > bold {
   font-weight: 800;
 }
 
+.block-text > bold {
+  font-weight: 800;
+}
+
 .ingredients-list li::before {
   color: var(--brown-800);
 }
@@ -176,12 +180,37 @@ ol li::before {
 
   .instructions-list li {
     margin-bottom: 1rem;
-    display: inline-block;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
   }
 
   .instructions-list li::before {
     margin-left: 0.5rem; /* Position the marker */
     margin-right: 1rem; /* Space after the marker */
+  }
+
+  .nutrition-section {
+    margin-bottom: 1rem;
+  }
+
+  .nutrition-table {
+    /* margin: 1rem; */
+    /* width: calc(100% - 2rem); */
+    table-layout: fixed;
+    width: 100%;
+    margin: 10px auto;
+    border-collapse: collapse;
+  }
+
+  .nutrition-table td {
+    border-bottom: 1px solid var(--stone-150);
+    padding: 1rem;
+    padding-left: 1.5em;
+  }
+
+  .nutrition-table tr:last-child td {
+    border-bottom: none;
   }
 }
 @media all and (min-width: 1440px) {
